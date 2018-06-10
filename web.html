@@ -60,7 +60,7 @@ body, html {
     </a>
     <a href="#home" class="w3-bar-item w3-button"> HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-tags"></i> SYNOPSIS</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> VISUALIZATION</a>
+    <a href="#visual" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> VISUALIZATION</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file"></i> REPORT</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
 
@@ -152,25 +152,37 @@ body, html {
 
 </dov> -->
 
-<div class="w3-row">
+<div class="w3-row" id = "visual">
+    <h3 class="w3-center">Visualization</h3>
     <div class="w3-col m6 w3-center w3-padding-large">
       <p><b><i class="w3-margin-right"></i><img src="pic/tree.png"width="400" height="400"></b></p><br>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="w3-margin-right"></i><img src="pic/regress.png"width="400" height="400"></b></p><br>
+      <p><b><i class="w3-margin-right"></i><img src="pic/wrong.png"width="400" height="400"></b></p><br>
 
     </div>
 </div>
 <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <i class="w3-margin-right">This is for caption!</i>
+      <i class="w3-margin-right">Decision Tree with Reduce Error Pruning, using LOOCV. Our learned decision tree model does not predict "High" on any region so we mispredict all the "high" regions.</i>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
-    <i class="w3-margin-right">this is for caption!</i>
+    <i class="w3-margin-right">We plotted a map of all the regions we predicted wrong. We observed that most of the incorrectly classified communities are from the south side. Thus, we tried adding a new binary attribute that indicates if a community is from the south side or north side. </i>
     </div>
 </div>
+
+<div class="w3-row" id = "visual">
+    <div class="w3-col w3-center w3-padding-large">
+      <p><b><img src="pic/tree.png"width="400" height="400"></b></p><br>
+    </div>
+    <div class="w3-col w3-center w3-padding-large">
+       <i class="w3-center"> this is for caption</i>
+    </div>
+</div>
+
+
 
 <!-- Container (Visualization Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
