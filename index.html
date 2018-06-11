@@ -67,16 +67,16 @@ table {
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> CONTACT</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-tags"></i> SYNOPSIS</a>
     <a href="#visual" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> VISUALIZATION</a>
-    <a href="#report" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file"></i> REPORT</a>
-    <a href="#dataset" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-database"></i> DATASET</a>
+    <a href="#report" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file"></i>  REPORT</a>
+    <a href="#dataset" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-database"></i>  DATASET</a>
 
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">SYNOPSIS</a>
-    <a href="#report" class="w3-bar-item w3-button" onclick="toggleFunction()">REPORT</a>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()"> HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"> SYNOPSIS</a>
+    <a href="#report" class="w3-bar-item w3-button" onclick="toggleFunction()"> REPORT</a>
   </div>
 </div>
 
@@ -90,8 +90,9 @@ table {
 
 
 <!-- Container (Report Section) -->
-<div class="w3-container w3-content w3-padding-64" id="contact">
-    <div class="w3-card w3-padding-large">
+<div class="w3-row">
+  <div class="w3-container w3-content w3-padding-64" id="contact">
+    <div class="w3-col m4 w3-card w3-padding-large">
       <font size="4" >Jin Han</font><br>  
       <font size="2" >jinhan2019@u.northwestern.edu</font> <br><br>
       <font size="4" >Boyang Li</font><br> 
@@ -99,6 +100,7 @@ table {
       <font size="4" >Wenyu Hu</font><br> 
       <font size="2" >wenyuhu2018@u.northwestern.edu</font> <br>
     </div>
+  </div>
 </div>
 
 <!-- Container (About Section) -->
@@ -143,21 +145,22 @@ table {
         <p style="text-align: left">Linear Regression</p> 
         <p style="text-align: left">Bagging + Random Forest</p> 
         <p style="text-align: left">Nearest Neighbor</p> 
-        <p style="text-align: left"> jj </p> 
+        <p style="text-align: left">-- </p> 
       </div>
       <div class="w3-col m4 w3-center" style="font-size:13px">
-        <p><u>Best LOOCV MSE</u></p>
+        <p><u>Best LOOCV MAE</u></p>
         <p>3.87</p> 
         <p>3.21</p> 
         <p>2.71</p> 
         <p>2.66</p> 
-        <p> jj </p>
+        <p>-- </p>
       </div>
       <p style="text-align: left; font-size:13px"> *** Backward Feature Selection with Marrow's Cp as cricriterion reduces overfitting and increases LOOCV accuracy </p>
       <p style="text-align: left; font-size:13px"> *** Most Important Features:  Hardship ,  % African American , % Caucasian , % Age Under 18 or Over 64, and  ifSouth  </p>
     </div>
   </div>
 
+  <p>Since Chicago only has 77 communities, we can only utilize 77 instances. Feature selection alonng with techniques such as pruning and bagging are essential, since they reduce overfitting and high dimension</p>
   <p><em> Key Conclusion: we acknowledge that correlation doesn’t mean causation. We can’t make causal conclusion on what factors are the underlying cause of high crime rates, but can only say that we observed higher correlation between the selected attributes and crime rates, in the dataset we aggregated. 
   </em></p>
 </div>
@@ -167,38 +170,39 @@ table {
     <span class="w3-xlarge">77</span><br>
     Communities
   </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">200,000+</span><br>
-    Crime Instances per year
+    <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">2.7M +</span><br>
+    Population
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">10+</span><br>
-    Avg Crime Rate per 100 population
+    <span class="w3-xlarge">200,000 +</span><br>
+    Crimical Activities
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
+    <span class="w3-xlarge">10 +</span><br>
+    Crime Rate per 100 people
   </div>
+
 </div>
 
 <div style="font-size:105%;" class="w3-row" id="visual">
     <h3 class="w3-center w3-content w3-container w3-padding-64">VISUALIZATION</h3>
-    <div class="w3-col m6 w3-center w3-padding-large">
+    <div class="w3-col m6 w3-center">
       <p><b><i class="w3-margin-right"></i><img src="pic/tree.png"width="400" height="400"></b></p><br>
     </div>
 
-    <div class="w3-col m6 w3-center w3-padding-large">
+    <div class="w3-col m6 w3-center">
       <p><b><i class="w3-margin-right"></i><img src="pic/wrong.png"width="400" height="400"></b></p><br>
     </div>
 </div>
 
 <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <i class="w3-margin-right">Decision Tree with Reduce Error Pruning, using LOOCV. Our learned decision tree model does not predict "High" on any region so we mispredict all the "high" regions.</i>
+      <i class="w3-margin-right">Decision Tree with Reduce Error Pruning, using LOOCV. Our learned decision tree model does not predict "High" on any community, so we mispredict all the "high" communities.</i>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
-    <i class="w3-margin-right">We plotted a map of all the regions we predicted wrong. We observed that most of the incorrectly classified communities are from the south side. Thus, we tried adding a new binary attribute that indicates if a community is from the south side or north side. </i>
+    <i class="w3-margin-right">We colored a map of all the regions that are incorrectly classified. We observed that most of the incorrectly classified communities are from the south side. Thus, we tried adding a new binary attribute that indicates if a community is from the south side or north side. </i>
     </div>
 </div>
 
@@ -215,7 +219,7 @@ table {
 
 <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <i class="w3-margin-right">We ran R to determine the optimal number of features. We performed backward selection, and compare the Cp level for different number of predictors. It turned out the best number of features that minimizes CP is 5.</i>
+      <i class="w3-margin-right">We performed backward selection in R to determine the optimal number of features, and compare the Cp level for different number of predictors. It turned out the best number of features that minimizes CP is 5.</i>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
@@ -237,13 +241,13 @@ table {
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min" id = "report">
   <div class="w3-display-middle">
-    <a href="./Final Report.pdf" class="w3-xxlarge w3-text-white w3-wide">View Full Report</a>
+    <span class="w3-center w3-xlarge w3-wide w3-animate-opacity w3-padding-large" style="background-color:rgba(255, 255, 255,80%)"><a href="./Final Report.pdf">View Full Report</a></span>
   </div>
 </div>
 
 
 <div class="w3-row">
-<div class="w3-col w3-center w3-padding-32" id="dataset">
+<div class="w3-col w3-center w3-padding-64" id="dataset">
       <i class="w3-center"><a href="./crime_rank.csv"><font size = "6">Click here to download the dataset in csv</font></a></i>
     </div>
   </div>
