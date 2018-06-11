@@ -26,7 +26,7 @@ table {
   }
 
 /* Create a Parallax Effect */
-.bgimg-1,.bgimg-2, .bgimg-3 {
+.bgimg-1,.bgimg-3 {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -39,11 +39,6 @@ table {
     min-height: 100%;
 }
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-    image: url("pic/tree.png");
-    min-height: 400px;
-}
 
 /* Third image (report) */
 .bgimg-3 {
@@ -69,19 +64,19 @@ table {
       <i class="fa fa-bars"></i>
     </a>
     <a href="#home" class="w3-bar-item w3-button"> HOME</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file"></i> CONTACT</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> CONTACT</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-tags"></i> SYNOPSIS</a>
     <a href="#visual" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> VISUALIZATION</a>
     <a href="#report" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-file"></i> REPORT</a>
-    <a href="#dataset" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> DATASET</a>
+    <a href="#dataset" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-database"></i> DATASET</a>
 
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">SYNOPSIS</a>
-    <a href="#dataset" class="w3-bar-item w3-button" onclick="toggleFunction()">DATASET</a>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">SYNOPSIS</a>
+    <a href="#report" class="w3-bar-item w3-button" onclick="toggleFunction()">REPORT</a>
   </div>
 </div>
 
@@ -93,15 +88,18 @@ table {
   </div>
 </div>
 
+
 <!-- Container (Report Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-    <font size="6" >Jin Han</font><br>  
-    <font size="4" >jinhan2019@u.northwestern.edu</font> <br><br>
-    <font size="6" >Boyang Li</font><br> 
-    <font size="4" >boyangli2019@u.northwestern.edu</font> <br><br>
-    <font size="6" >Wenyu Hu</font><br> 
-    <font size="4" >wenyuhu2018@u.northwestern.edu</font> <br>
+<div class="w3-container w3-content w3-padding-64" id="contact">
+    <div class="w3-card w3-padding-large">
+      <font size="4" >Jin Han</font><br>  
+      <font size="2" >jinhan2019@u.northwestern.edu</font> <br><br>
+      <font size="4" >Boyang Li</font><br> 
+      <font size="2" >boyangli2019@u.northwestern.edu</font> <br><br>
+      <font size="4" >Wenyu Hu</font><br> 
+      <font size="2" >wenyuhu2018@u.northwestern.edu</font> <br>
     </div>
+</div>
 
 <!-- Container (About Section) -->
 <div style="font-size:105%;" class="w3-content w3-container w3-padding-64" id="about">
@@ -109,33 +107,59 @@ table {
   <p  class="w3-center"><em>"The last copy of the Chicago Daily News I picked up had three crime stories on its front page."</em></p>
   <p>
     Criminal activities plague societies by disrupting normal social order, incurring high economic costs on the communities, and causing concerns among residents about their safety. As one of the largest cities in the United States, the city of Chicago also has one of the highest crime rates in the nation.
-    In order to investigate what might be underlying cause of high crime rates of a given Chicago community, we focus on the socio-economic factors since they are good indicators of a community’s health and vitality. <br> <br>
-    <em> Main Goal: predict whether a Chicago community tend to have higher crime rate given the status of its various socio-economic factors</em>.
+    In order to investigate what might be underlying cause of high crime rates of a given Chicago community, we focus on the socio-economic factors since they are good indicators of a community’s health and vitality. <br /><br />
+    <em> Main Goal: predict whether a Chicago community tend to have higher crime rate given the status of its various socio-economic factors</em> <br />
+    <em> Attributes: 13 socio-economic factors:  % Households below Poverty, Per Captical Income, % Caucasian, and etc. (see report for the full list)</em>
   </p>
 
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-sitemap w3-margin-right"></i>Classification</b></p><br>
+      <h5><b><i class="fa fa-sitemap w3-margin-right"></i>Classification</b></h5>
+      <div class="w3-col m8 w3-center" style="font-size:13px">
+        <p style="text-align: left"><u>CLASSIFERS</u></p> 
+        <p style="text-align: left">Decision Tree</p> 
+        <p style="text-align: left">Logistic Regression</p> 
+        <p style="text-align: left">Naive Bayes</p> 
+        <p style="text-align: left">SMO</p> 
+        <p style="text-align: left">Nearest Neighbor</p> 
+      </div>
+      <div class="w3-col m4 w3-center" style="font-size:13px">
+        <p><u>Best LOOCV ACC</u></p>
+        <p>%68.42</p> 
+        <p>%69.73</p> 
+        <p>%68.42</p> 
+        <p>%60.52</p> 
+        <p>%68.42</p> 
+      </div>
+      <p style="text-align: left; font-size:13px"> *** Adding binary attributes: ifSouth, and feature selection reduces overfitting and increases LOOCV accuracy </p>
+      <p style="text-align: left; font-size:13px"> *** Most Important Features:  % African American ,  % Asian, Per Capital Income, % Aged 16+ Unemployed, ifSouth </p>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-line-chart w3-margin-right"></i>Regression</b></p><br>
-
+      <h5><b><i class="fa fa-line-chart w3-margin-right"></i>Regression</b></h5>
+      <div class="w3-col m8 w3-center" style="font-size:13px">
+        <p style="text-align: left"><u>ALGORITHMS</u></p> 
+        <p style="text-align: left">Multilayer Perceptron</p> 
+        <p style="text-align: left">Linear Regression</p> 
+        <p style="text-align: left">Bagging + Random Forest</p> 
+        <p style="text-align: left">Nearest Neighbor</p> 
+        <p style="text-align: left"> jj </p> 
+      </div>
+      <div class="w3-col m4 w3-center" style="font-size:13px">
+        <p><u>Best LOOCV MSE</u></p>
+        <p>3.87</p> 
+        <p>3.21</p> 
+        <p>2.71</p> 
+        <p>2.66</p> 
+        <p> jj </p>
+      </div>
+      <p style="text-align: left; font-size:13px"> *** Backward Feature Selection with Marrow's Cp as cricriterion reduces overfitting and increases LOOCV accuracy </p>
+      <p style="text-align: left; font-size:13px"> *** Most Important Features:  Hardship ,  % African American , % Caucasian , % Age Under 18 or Over 64, and  ifSouth  </p>
     </div>
   </div>
-<!--   <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
-  </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
-  <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
-  </div> -->
+
+  <p><em> Key Conclusion: we acknowledge that correlation doesn’t mean causation. We can’t make causal conclusion on what factors are the underlying cause of high crime rates, but can only say that we observed higher correlation between the selected attributes and crime rates, in the dataset we aggregated. 
+  </em></p>
 </div>
 
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
@@ -149,7 +173,7 @@ table {
   </div>
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">10+</span><br>
-    Crime Rate per 100 population
+    Avg Crime Rate per 100 population
   </div>
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">150+</span><br>
@@ -157,32 +181,17 @@ table {
   </div>
 </div>
 
-<!-- Second Parallax Image with Portfolio Text -->
-<!-- <div class="bgimg-2 w3-display-container w3-opacity-min">
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide"><img src="pic/tree.png" alt="Girl in a jacket" width="400" height="400"></span>
-  </div>
-</div> -->
-<!-- <div>
-
-  <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">Visualization</span>
-    <img src="tree.png" alt="Girl in a jacket" width="500" height="600">
-  </div>
-
-</dov> -->
-
-<div class="w3-row" id = "visual">
-    <h3 class="w3-center">Visualization</h3>
+<div style="font-size:105%;" class="w3-row" id="visual">
+    <h3 class="w3-center w3-content w3-container w3-padding-64">VISUALIZATION</h3>
     <div class="w3-col m6 w3-center w3-padding-large">
       <p><b><i class="w3-margin-right"></i><img src="pic/tree.png"width="400" height="400"></b></p><br>
     </div>
 
     <div class="w3-col m6 w3-center w3-padding-large">
       <p><b><i class="w3-margin-right"></i><img src="pic/wrong.png"width="400" height="400"></b></p><br>
-
     </div>
 </div>
+
 <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
       <i class="w3-margin-right">Decision Tree with Reduce Error Pruning, using LOOCV. Our learned decision tree model does not predict "High" on any region so we mispredict all the "high" regions.</i>
@@ -228,17 +237,10 @@ table {
 <!-- Third Parallax Image with Portfolio Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min" id = "report">
   <div class="w3-display-middle">
-    <a href="./Final Report.pdf" class="w3-xxlarge w3-text-white w3-wide">View Ful Report</a>
+    <a href="./Final Report.pdf" class="w3-xxlarge w3-text-white w3-wide">View Full Report</a>
   </div>
 </div>
 
-<!-- Container (Visualization Section) -->
-<!-- <div class="w3-content w3-container w3-padding-64" id="portfolio">
-    <div class="w3-col m6 w3-center w3-padding-large">
-  <div class="w3-display-middle">
-    <a href="./Final Report.pdf" class="w3-xxlarge w3-text-white w3-wide">View Ful Report</a>
-  </div>
-</div> -->
 
 <div class="w3-row">
 <div class="w3-col w3-center w3-padding-32" id="dataset">
@@ -1742,6 +1744,7 @@ table {
               </table>
     </div>
   </div>
+
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
